@@ -1,6 +1,6 @@
-# utils
+# UTILS
 
-### JSON pretty print
+### JSON - Pretty Print
 ```
 import json 
 
