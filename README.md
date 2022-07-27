@@ -43,3 +43,16 @@ print(json.dumps(payload, indent=4))
         "dateSubmittedLocal": "2022-07-08, 12:24:18 UTC+10"
     }
 ```
+
+### Pdf binary content to file
+```
+def get_pdf(sub_id: int) -> Any:
+    
+    query = f'?submittedFormId={sub_id}'
+    res: Response = api.sendRequest(lookups.EndPoint.FORM_PDF, "GET", query)
+    contents = res.content
+    with open(f'submitted_form_id_{sub_id}.pdf', 'wb') as f:
+        f.write(contents)
+    return res.content
+```
+
